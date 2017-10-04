@@ -1,0 +1,48 @@
+\documentclass[a4paper,10pt,reqno]{article}
+\usepackage{amsmath,amssymb,amsfonts}
+\renewcommand{\baselinestretch}{1.4}
+
+
+\headheight=0in
+\headsep=0in
+\footskip=15pt
+\textheight=680pt
+\topskip=0pt
+\topmargin=-10pt
+
+
+
+\vfuzz5pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz5pt % Don't report over-full h-boxes if over-edge is small
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\centering{\Large\textbf{  Ordinary Differential Equations - 10413181}}
+\centering{Homework No. 9}
+
+\begin{enumerate}
+\item Given the following inhomogeneous second order equation
+\[ y'' - y' - 2y = 2 e^{-t} \]
+\begin{enumerate}
+\item Solve by comparing coefficients. (\emph{Make an ansatz for a particular solution $\psi = \ldots.$ If something goes wrong initially, try solving the homogeneous problem first to identify the origin of your problems. Then try $\psi = t \cdot \ldots$})
+\item Use variation of parameters to solve the same problem.
+\item Finally, given one solution $y_1$ of the homogeneous problem, use reduction of order with the ansatz $y = y_1(t) v(t)$ to derive a first order equation for $v'(t) = u(t).$ 
+\item Show that finding a particular solution to the related problem \[ y'' - y' - 2y = 2 e^{-t} + 1 \]
+is equivalent to adding a particular solution of 
+$ y'' - y' - 2y = 1 $ to a particular solution of $y'' - y' - 2y = 2 e^{-t}.$ \emph{You may use any of the above methods to determine the particular solutions.}
+
+\end{enumerate}
+\item In class, we considered the case of damped harmonic oscillators
+\[ m y'' + \gamma y' + k y = 0 \]
+where $m$ is mass, $\gamma$ a damping coefficient, and $k$ a spring constant, and $m, \, k > 0, \, \gamma \geq 0$. Assume a motor is attached to the damped spring which supplies an oscillatory force $F_0 \cos(\omega t),$ so that 
+\[ m y'' + \gamma y' + k y = F_0 \cos(\omega t). \]
+\begin{enumerate}
+\item We would like to find a particular solution to this general equation. Think first about which method is appropriate, and then use that method to obtain such a solution.
+\item Look up the form of the homogeneous solutions from class (or derive them yourself). What is the long--time behavior ($t \rightarrow \infty$) of the general solution?
+\item (Optional) Analyze the above problem for $\gamma = 0.$ Does any particular case of $\omega$ in the forcing play a special role? (\emph{We will discuss this in class.})
+\end{enumerate}
+\end{enumerate}
+
+\end{document}
+
+

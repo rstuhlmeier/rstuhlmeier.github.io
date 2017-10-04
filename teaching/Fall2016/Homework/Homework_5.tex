@@ -1,0 +1,61 @@
+\documentclass[a4paper,12pt,reqno]{article}
+\usepackage{amsmath,amssymb,amsfonts}
+\renewcommand{\baselinestretch}{1.4}
+
+
+\headheight=0in
+\headsep=0in
+\footskip=15pt
+\textheight=680pt
+\topskip=0pt
+\topmargin=-10pt
+
+
+
+\vfuzz5pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz5pt % Don't report over-full h-boxes if over-edge is small
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\centering{\Large\textbf{  Ordinary Differential Equations - 10413181}}
+\centering{Homework No. 5}
+
+\begin{enumerate}
+\item \textbf{Parameter--dependent ODEs and bifurcation}\\
+We have discussed (and practiced) drawing direction fields for autonomous equations \[ y' = f(y). \]
+Recall that the values of $y$ where $f(y) = 0$ are ``flat" trajectories in the direction field (so-called fixed--points or equilibrium points).
+Given the autonomous ODE
+\begin{equation}
+\label{saddle-node}
+\frac{dx}{dt} = r + x^2 \text{ where } r \in \mathbb{R} \text{ is a parameter}
+\end{equation}
+\begin{enumerate}
+\item Solve the ODE for $r>0,$ $r<0,$ and $r = 0.$ \emph{(You may choose $r =1, \, -1,$ and $0$ to simplify things, or leave $r$ as is. Feel free to disregard constants of integration, since this is an autonomous equation.)}
+\item (Optional) \emph{Think about} the qualitative behaviour of each of the solutions. You may sketch a graph of the solution to better visualize things.
+\item Call the right-hand side of the equation $f(x) = r+x^2.$
+\begin{itemize}
+\item Plot the graph $(x,f(x))$ for $r = 1, -1$ and $0.$ (\emph{Don't overthink it. This is just like in high-school!)}
+\item At how many points does the graph intersect the $x$-axis in each case? (\emph{Equivalently, how many zeroes does $f(x)$ have for the different values of $r$?}
+\item Sketch (with the help of the above answer) a direction field in the $(x,t)$--plane for equation \eqref{saddle-node} and $r = 1, -1$ and $0.$ Where are the fixed points?
+\item Compare the dynamics you see in your sketches with the analytical solutions. Also: compare the effort needed to get a qualitative picture from the direction field to that needed to write down analytical solutions.
+\item (Optional) Note that as the parameter $r$ changes, fixed points appear or disappear. This phenomenon is called \emph{bifurcation}! 
+\item \begin{small}(Really Optional!) If you want to find out more about this, try the same exercise as above on the equation $x' = rx - x^2.$ How does the stability of the fixed points change (looking at the direction field)? (This is the \emph{trans-critical bifurcation} in contrast to the \emph{saddle-node bifurcation} above).\end{small}
+\end{itemize}
+\end{enumerate}
+\item \textbf{Practice with second order, homogeneous, constant coefficient ODES}\\
+For the following problems: (a) Substitute $y = e^{rt}$ into the equations. (b) Find the root(s) of the resulting second order polynomial. (c) Convince yourself that $Ce^{r_1 t}$ for $r_1$ any root solves the equation. (d) Write down the general solution $C_1 e^{r_1 t} + C_2 e^{r_2 t}$ like in class.
+\begin{enumerate}
+\item $y'' + 3y' - 4y = 0$
+\item $y'' + 5y' = 0$
+\item $y'' + 3y' + 2y = 0$ \\
+
+For the next equations, also determine the value of the two constants that satisfy the initial value problems:
+\item $y'' - 3y' + 2y = 0, \quad y(0) = 1, \, y'(0) = 1$
+\item $y''+3y' = 0, \quad y(0) = -2, \, y'(0) = 3$
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+
+

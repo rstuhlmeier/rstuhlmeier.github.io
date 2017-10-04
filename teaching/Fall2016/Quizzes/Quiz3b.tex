@@ -1,0 +1,40 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[left=1cm,right=1cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Name:}
+\rhead{ID: \hspace{10em}}
+\usepackage{amssymb}
+\linespread{1}
+\usepackage{graphicx}
+
+\title{Quiz 3}
+\date{}
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+\noindent \emph{You are being asked to show your work in answering the following questions. Full points will be awarded only for correct application of the method, and the correct answer.}
+
+\begin{enumerate}
+\item (1 point) Given the following second order ODE
+\[ y'' + 4 y = 0 \]
+find a general solution and write it in terms of trigonometric functions (\emph{Hint: Euler's formula.})
+\item Given the following inhomogeneous second order ODE
+\[ y'' - 2y' - 3y = 3e^{2t} \]
+\begin{enumerate}
+\item (1 point) One solution is given by $y_1(t) = e^{-t}.$ Use reduction of order (\emph{hint: $y_2(t) = v(t) y_1(t)$}) to find the other solution. Show your work!
+\item (1 point) Use the method of undetermined coefficients to find a particular solution to the inhomogeneous problem. That is, pick a substitution that seems reasonable, e.g.\ $Y(t) = a_0 + a_1t + \ldots a_n t^n$ or $Y(t) = A \sin(t) + B \cos(t)$ or $Y(t) = \exp(\alpha t),$ or some other combination, and find $Y.$ 
+\end{enumerate}
+\item[] \emph{Hint: you may use other methods to check your answers.}
+\item Use the method of variation of parameters to find the \emph{general solution} to the equation 
+\[ x'' + x = 5. \]
+\begin{enumerate}
+\item (0.5 points) Write and solve the matrix equation for $(u_1',u_2')^t$ to find a particular solution. (\emph{Hint: recall the conditions $u_1' x_1 + u_2' x_2 = 0$ and $u_1'x_1' + u_2'x_2' = g(t)$ for the generic case.})
+\item (0.5 points) Write down the general solution of the equation.
+\end{enumerate}
+\end{enumerate}
+\end{document}
