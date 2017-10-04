@@ -1,0 +1,46 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\title{PDEs 10422884 -- Homework 1}
+\date{}
+\begin{document}
+\maketitle
+\textsl{ This homework must be handed in prior to the tutorial on \textbf{April 4th, 2017}. Questions marked with $*$ will be graded, and will go towards your grade on the homework. Unmarked questions will be checked for completion (or a reasonable attempt).}
+
+\begin{enumerate}
+\item[*1.] Which of the following operators are linear?
+\begin{enumerate}
+\item $L[u] = u_x + xu_y$
+\item $L[u] = u_x + uu_y$
+\item $L[u] = u_x + u_y^2$
+\item $L[u] = u_x +u_y + 1$
+\item $L[u] = \sqrt{1+x^2} (\cos(y)) u_x + u_{yxy} - (\arctan(x/y)) u$
+\end{enumerate}
+
+\item[*2.] For each of the following equations, state the order and whether it is nonlinear, linear inhomogeneous, or linear homogeneous; provide reasons.
+\begin{enumerate}
+\item $u_t - u_{xx} + 1 = 0$
+\item $u_t - u_{xx} + xu = 0$
+\item $u_t - u_{xxt} + uu_x = 0$
+\item $u_{tt} - u_{xx} + x^2 = 0$
+\item $i u_t - u_{xx} + u/x = 0$
+\item $u_x(1+u_x^2)^{-1/2} + u_y(1+u_y^2)^{-1/2} = 0$
+\item $u_x + e^y u_y = 0$
+\item $u_t + u_{xxxx} + \sqrt{1+u} = 0$
+\end{enumerate}
+
+\item[*3.] Verify that $u(x,y) = f(x)g(y)$ is a solution of the PDE $uu_{xy} = u_x u_y$ for all pairs of (differentiable) functions $f$ and $g$ of one variable.
+
+\item[4.] Verify by direct substitution that 
+\[ u_n(x,y) = \sin(nx)\sinh(ny) \]
+is a solution of $u_{xx} + u_{yy} = 0$ for every $n > 0.$
+
+\item[*5.] Solve the equation $3u_y + u_{xy} = 0.$ (\emph{Hint:} Let $v = u_y.$)
+
+\item[6.] Show that the solutions of the differential equation $u''' - 3u'' + 4u = 0$ form a vector space. Find a basis of it.
+
+\end{enumerate}
+\end{document}

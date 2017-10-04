@@ -1,0 +1,32 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\title{PDEs 10422884 -- Homework 6}
+\date{}
+\begin{document}
+\maketitle
+\textsl{ This homework must be handed in prior to the tutorial on \textbf{June 8th, 2017}.}
+
+\begin{enumerate}
+\item[*1.] Solve % Strauss 3.4.2
+\[ u_{tt} - c^2 u_{xx} = e^{ax}, \, u(x,0) = 0, \, u_t(x,0) = 0. \]
+\item[*2.] Solve % Strauss 3.2.5
+\[ u_{tt} = 4 u_{xx} \]
+on $0<x<\infty, \, u(0,t) = 0, \, u(x,0) = 1, \, u_t(x,0) = 0$ using the reflection method. Does your solution have a singularity? Try to explain why, in terms of compatibility of the initial and boundary conditions (\emph{optional}).
+\item[*3.] Find a solution to the problem %Logan Applied PDEs 2.4.3
+\[ u_{tt} - c^2 u_{xx} = 0, \, x>0, \, t>0 \]
+with $u(0,t) = 0, \, t>0,$ and $u(x,0) = xe^{-x}, \, u_t(x,0) = 0, \, x>0.$
+\item[*4.] Find a particular solution $u_p$ to the inhomogeneous equation 
+\[ u_{tt} - u_{xx} = t^7, \, -\infty < x < \infty, \, t>0. \]
+Using this particular solution, solve the Cauchy problem with initial data 
+\[ u(x,0) = 2x + \sin(x), \, u_t(x,0) = 0, -\infty<x < \infty \]
+by substituting $w = u - u_p$ and using D'Alembert's formula. % my notes week 7
+\item[**5.] (Optional) Solve 
+\[ u_{tt} = c^2 u_{xx}, \, 0<x<\infty, \, 0 \leq t < \infty, \, u(x,0) = 0, u_t(x,0) = V\] subject to $u_t(0,t) + au_x(0,t) = 0,$ where $V, a$ and $c$ are positive constants, and $a > c.$ % Strauss 3.2.6
+\end{enumerate}
+
+
+\end{document}

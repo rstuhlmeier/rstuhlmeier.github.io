@@ -1,0 +1,46 @@
+
+
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\title{PDEs 10422884 – Homework 7}
+\date{}
+\begin{document}
+
+\maketitle
+
+
+This homework must be handed in prior to the tutorial on June 15th,
+2017. 
+\begin{enumerate}
+\item Consider waves in a resistant medium satisfying the problem
+\begin{align*}
+& u_{tt} = c^2 u_{xx} - r u_t, \, 0 < x < l \\
+& u = 0 \text{ at } x = 0, \, x = l \\
+& u(x,0) = \phi(x)\\
+& u_t(x,0) = \psi(x)
+\end{align*}
+for $0 < r < 2 \pi c /l$ a constant. Use separation of variables to write down the series expansion of the solution. \emph{Optional:} Repeat this for the case $2 \pi c/l < r < 4 \pi c/l.$
+\item[*2.] Use separation of variables to solve the Schr\"odinger equation $u_t = iu_{xx}$ on the interval $(0,l)$ with Dirichlet conditions on both ends.
+\item[3.] Solve the diffusion problem $u_t = k u_{xx}$ in $0<x<l$ with mixed boundary conditions $u(0,t) = u_x(l,t) = 0.$ 
+\item[4.] \begin{enumerate}
+\item Consider the SLP
+\[ (x^2 v')' + \lambda v = 0, \, 1 < x < b, \, v(1) = v(b) = 0, \, (b>1).\]
+Find the eigenvalues and eigenfunctions of the problem.
+\emph{Hint:} show that
+\[ v(x) = x^{-1/2} \sin(\alpha \ln x) \]
+is a solution of the ODE and satisfies the boundary condition $v(1) = 0.$ Alternatively: recall how to solve Euler ODE's.
+\item Write down a solution to the following problem using separation of variables
+\begin{align*}
+& u_t = (x^2 u_x)_x \text{ for } 1 < x< b, \, t>0 \\
+& u(1,t) = u(b,t) = 0 , \, t \geq 0 \\
+& u(x,0) = f(x) , \, 1 \leq x \leq b  
+\end{align*}
+\end{enumerate}
+\end{enumerate}
+
+
+\end{document}
+

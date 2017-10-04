@@ -1,0 +1,40 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\title{PDEs 10422884 -- Homework 2}
+\date{}
+\begin{document}
+\maketitle
+\textsl{ This homework must be handed in prior to the tutorial on \textbf{April 27th, 2017}. Questions marked with $*$ will be graded, and will go towards your grade on the homework. Unmarked questions will be checked for completion (or a reasonable attempt).}
+
+
+\begin{enumerate}
+
+\item[*1.] Given is the PDE $y u_x - x u_y = 0, \, (y>0),$ along with either auxiliary condition (a) $u(x,0) = x^2$ or (b) $u(x,0) = x.$
+\begin{enumerate}
+\item Reformulate the PDE as a directional derivative, i.e. find the vector $\vec{v}$ such that $\frac{du}{d \vec{v}} = 0$ is equivalent to the PDE. Recall that the PDE then says that solutions $u$ are constant in the direction of this vector $\vec{v},$ i.e. along lines with a slope equal to $\vec{v}.$ Use this geometric idea to find a solution to the PDE in terms of arbitrary function(s), and then attempt to solve the problems (a) and (b).
+\item Use the method of characteristics to solve the same boundary value problems. Find the characteristic ODE
+\begin{align*}
+x_t = a(x,y,u)\\
+y_t = b(x,y,u)\\
+u_t = c(x,y,u)
+\end{align*}
+and write each auxiliary condition parametrically in terms of $(s,t).$ Attempt to solve the problems (a) and (b).
+\end{enumerate}  
+
+\item[*2.] Use any method (including characteristics and the geometric ideas learned in the tutorial) to solve the constant coefficient equation $2u_t + 3u_x = 0$ subject to the auxiliary condition $u = \sin(x)$ when $t = 0.$
+
+\item[3.] Solve the PDE $a u_x + b u_y + cu = 0$ by using the following new set of coordinates $\xi = ax + by, \, \zeta = bx - ay.$ \emph{Hint:} Use the chain rule to express derivatives w.r.t.\ $x$ as derivatives w.r.t.\ $\xi,$ etc.
+\item[4.] Solve the PDE $u_x + u_y = 1$ by using the following new set of coordinates $\xi = x + y, \, \zeta = x - y.$
+
+\item[5.] Solve 
+\begin{align*}
+& u_t + x u_x = u^3 \\
+& u(x,0) = \sin(x)
+\end{align*}
+As some time $T>0$ the solution $u$ blows up. That is, there exist points $x_0$ such that $|u(x_0,T)| \rightarrow + \infty.$ Find the smallest time $T,$ and the points $x_0$ such that $|u(x_0,T)| \rightarrow + \infty$ as $t \rightarrow T^-.$
+\end{enumerate}
+\end{document}

@@ -1,0 +1,59 @@
+
+
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\title{PDEs 10422884 – Homework 9}
+\date{}
+\begin{document}
+
+\maketitle
+
+
+This homework must be handed in prior to the tutorial on June 29th,
+2017. 
+\begin{enumerate}
+\item \begin{enumerate} % This is basically the text out of Strauss
+\item Consider the eigenvalue problem $X'' = - \lambda X$ on the interval $[0,l]$ with Robin boundary conditions: 
+\begin{align*}
+X' + X = 0 \text{ on } x = 0,\\
+X' = 0 \text{ on } x = l.
+\end{align*}
+Investigate the problem assuming $\lambda = - \gamma^2 < 0.$ Is/are there one (or many) negative eigenvalue(s)? Explain your answer graphically!
+\item Assuming you are treating a wave or heat equation on $[0,l]$, such that the expansion of the solution is 
+\begin{equation}
+u(x,t) = \sum_n T_n(t) X_n(x) 
+\end{equation}
+where $X_n(x)$ are the eigenfunctions determined by the boundary conditions, and 
+\[ T_n(t) = \begin{cases} A_n e^{-\lambda_n k t} \text{ for the heat eqn.} \\
+A_n \cos(\sqrt{\lambda_n}ct) + B_n \cos(\sqrt{\lambda_n}ct) \text{ for the wave eqn.} \end{cases} \]
+
+write down the form of the expansion assuming the Robin boundary conditions given above, and arbitrary initial conditions (e.g.\ $u = \phi$ on $t = 0$ for the heat equation). Try to interpret the results.
+\end{enumerate}
+\item Solve the forced wave equation % Kazdan solves this in Homework 7
+\begin{align*}
+& u_{tt} = c^2 u_{xx} + g(x) \sin(\omega t), \, 0 < x < l \\
+& u = 0 \text{ on } x = 0, x = l \\
+& u = u_t = 0 \text{ on } t = 0.
+\end{align*}
+For which values of $\omega$ can resonance occur? (Consult your notes from ODEs last semester).
+\item Solve via series expansion the heat equation $u_t = u_{xx}$ in $(0,1)$ with $u_x(0,t) = 0, \, u(1,t) = 1,$ and $u(x,0) = x^2.$ Compute the first two coefficients explicitly. What is the equilibrium state (term that does not tend to zero with large time?) % Kazdan solves this in HW 7
+\item Write the Legendre equation  % you can find this on wikipedia, or anywhere
+\[ (1-x^2) y'' - 2 xy' + n(n+1)y = 0 \]
+in Sturm-Liouville form 
+\[ (pv')' + q v   = 0 .\]
+Do the same for the Bessel equation
+\[ r^2 w''(r) + r w'(r) + (r^2 - \nu^2) w(r) = 0.\]
+\emph{Hint: try dividing by $r$ and transforming $x = r/\lambda.$}
+
+\item (Optional mathematical background) Recall that we call a relation $\langle \, , \, \rangle:X \times X \rightarrow \mathbb{R}$ from some vector space $X$ into the real numbers an inner product (or scalar product) if $\forall x, \, y, \, x_1, \, x_2 \in X, \, \forall \lambda \in \mathbb{R}:$\\ (a) $\langle x_1 + x_2, y \rangle = \langle x_1,y \rangle + \langle x_2,y \rangle,$ (b) $ \langle \lambda x, y \rangle = \lambda \langle x,y \rangle,$ (c) $\langle x,y \rangle
+ = \langle y, x \rangle,$ (d) $\langle x,x \rangle \geq 0,$ (e) $\langle x,x \rangle = 0  \Leftrightarrow x = 0.$ Show, for the vector space of integrable functions on an interval $[a,b] \in \mathbb{R}$ that 
+\[ \langle f,g \rangle = \int_a^b f(x) g(x) dx \]
+satisfies these properties and defines an inner product on this space.
+ \end{enumerate}
+
+
+\end{document}
+

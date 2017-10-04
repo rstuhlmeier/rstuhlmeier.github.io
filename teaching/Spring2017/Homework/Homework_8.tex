@@ -1,0 +1,36 @@
+
+
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\title{PDEs 10422884 – Homework 8}
+\date{}
+\begin{document}
+
+\maketitle
+
+
+This homework must be handed in prior to the tutorial on June 22nd,
+2017. 
+\begin{enumerate}
+\item Consider the problem $u_t = k u_{xx}$ for $0 < x < l,$ with the boundary conditions $u(0,t) = U, \, u_x(l,t) = 0,$ and the initial condition $u(x,0) = 0,$ where $U$ is a constant. Find the solution in series form. \emph{Hint: consider $u(x,t) - U.$}
+\item In class you learned that for a Sturm Liouville problem of the form $(pv')' + qv + \lambda r v = 0,$ if $q \leq 0$ and if $puu'|^b_a \leq 0$ for all $u$ that satisfy the given boundary conditions, then all eigenvalues are nonnegative. Show for the equation $X'' = - \lambda X$ that Dirichlet and Neumann problems have only nonnegative eigenvalues. Under what conditions does the Robin problem
+\begin{align*}
+& X'(0) - a_0 X(0) = 0 \\
+& X'(l) + a_l X(l) = 0
+\end{align*}
+ have only nonnegative eigenvalues?
+ \item For $\phi(x) = x^2$ on $0 \leq x \leq 1,$ calculate the coefficients in the expansion (Fourier sine series)
+ \[ \phi(x) = \sum_{n = 1}^\infty A_n \sin(n \pi x). \]
+ If you are not sure why the terms appearing in the $\sin$ are $n \pi x,$ also solve the Dirichlet problem $X'' = -\lambda X, \, X(0) = X(1) = 0.$
+ \item A rod has length $l = 1$ and constant $k = 1.$ Its temperature satisfies the heat equation. Its left end is held at temperature 0, its right end at temperature 1. Initially (at $t=0$) the temperature is given by
+ \[ \phi(x) = \begin{cases} \frac{5x}{2} \text{ for } 0 < x < 2/3 \\
+ 3 - 2x \text{ for } 2/3 < x < 1 \end{cases} \] 
+ Find the solution, including the coefficients. \emph{Hint: first find the equilibrium solution $U(x),$ and then solve the heat equation with initial condition $u(x,0) = \phi(x) - U(x)$}
+\end{enumerate}
+
+
+\end{document}
+

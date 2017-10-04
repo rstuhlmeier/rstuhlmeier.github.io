@@ -1,0 +1,36 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\title{PDEs 10422884 -- Homework 3}
+\date{}
+\begin{document}
+\maketitle
+\textsl{ This homework must be handed in prior to the tutorial on \textbf{April 27th, 2017}. Questions marked with $*$ will be graded, and will go towards your grade on the homework. Unmarked questions will be checked for completion (or a reasonable attempt).}
+
+\begin{enumerate}
+\item[*1.] Given the PDE % OLGA TIRGUL, MY NOTES WEEK 2
+\[ x y u u_x + y^2 u u_y = x^2 + y^2, \quad x>0, \, y>0 \]
+and the auxiliary condition $u(x,x) = \sqrt{x},$ establish whether there exists a unique solution, and if so, find it. If there are infinitely many solutions, find two different ones. Otherwise show that there exist no solutions to the Cauchy problem. \emph{Hint: the characteristic equations were solved in class.}
+\item[2.] Given the Cauchy problem % PR 2.25
+\[ u_x + u_y = 1, \quad u(x,x) = x.\]
+Check that this problem does not have a unique solution, and sketch the characteristics and the projection of the initial curve on the $xy$ plane. Recall that additional solutions can be given by specifying new curves that are non-tangential to the characteristics. For example, other solutions to this Cauchy problem can be given by using the new auxiliary conditions:
+\begin{enumerate}
+\item $u(x,1) = x$ which yields $u(x,y) = x.$
+\item $u(1,x) = x$ which yields $u(x,y) = y.$
+\item $u(x,-x) = 0$ which yields $u(x,y) = (x+y)/2.$
+\end{enumerate} 
+Add the projections of each of these initial curves to your sketch above, and verify the given solutions.
+Then find two different solutions by specifying other auxiliary conditions (\emph{hint: can you involve an arbitrary function?}).
+
+\item[3.*] Find a function $u(x,y)$ that solves the Cauchy problem % PR 2.21
+\[ xu_x - yu_y = u+xy, \quad u(x,x) = x^2, \quad 1\leq x \leq 2. \]
+\begin{enumerate}
+\item Check whether the transversality condition holds.
+\item Draw the projections on the $xy$ plane of the initial curve and the characteristic curves emanating from the points $(1,1,1)$ and $(2,2,4).$
+\item Is the solution well defined in the entire plane?
+\end{enumerate}
+\end{enumerate}
+\end{document}

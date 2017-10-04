@@ -1,0 +1,50 @@
+
+
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\title{PDEs 10422884 – Homework 10}
+\date{}
+\begin{document}
+
+\maketitle
+
+
+This homework does not need to be handed in. 
+\begin{enumerate}
+\item Let $h>0.$ Solve the problem
+\begin{align*}
+& u_t - u_{xx} + hu = 0, \, 0 < x < \pi, \, t > 0 \\
+& u(0,t) = 0, \, u(\pi,t) = 1, \, t \geq 0 \\
+& u(x,0) = 0, \, 0 \leq x \leq \pi
+\end{align*}
+Is the solution classical? (Recall from class what you need to check!)
+\item  Solve the problem
+\begin{align*}
+& u_t - u_{xx} = 2t + (9t + 31) \sin(3x/2), \, 0 < x < \pi, \, t > 0 \\
+& u(0,t) = t^2, \, u_x(\pi,t) = 1, \, t \geq 0 \\
+& u(x,0) = x+3\pi, \, 0 \leq x \leq \pi
+\end{align*}
+Is the solution classical?
+\item Let $u(x,t)$ be a solution of the problem
+\begin{align*}
+& u_t - u_{xx} = 0, \, Q_T = \{ (x,t) \mid 0 < x < \pi, \, 0 < t \leq T \} \\
+& u(0,t) =  u(\pi,t) = 0, \, 0\leq t \leq T \\
+& u(x,0) = \sin^2(x), \, 0 \leq x \leq \pi
+\end{align*}
+Use the maximum principle to prove that $0 \leq u(x,t) \leq e^{-t} \sin(x)$ in the rectangle $Q_T.$
+\item Consider the equation 
+\begin{align*}
+& u_t - u_{xx} = 0, \, 0 < x < 1, t > 0\\
+& u(0,t) = u(1,t) = 0 \\
+& u(x,0) = 4x(1-x)
+\end{align*}
+(a) Show that $0 < u(x,t) < 1$ for all $t>0$ and $x \in (0,1).$ (b) Show that $u(x,t) = u(1-x,t)$ for all $t \geq 0$ and $0 \leq x \leq 1.$ (c) Use the energy method to show that $\int_0^1 u^2 dx$ is a strictly decreasing function of $t.$
+\item Show that the maximum principle is not true for the equation $u_t = xu_{xx}$ with a variable coefficient. First verify that $u(x,t) = -2xt - x^2$ is a solution. Find the location of its maximum in the closed rectangle $\{-x \leq x \leq 2, \, 0 \leq t \leq 1\}.$
+ \end{enumerate}
+
+
+\end{document}
+
