@@ -1,0 +1,121 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\title{Homework 5 Solutions}
+\date{}
+\begin{document}
+
+\maketitle
+
+\noindent \textbf{1. Parameter--dependent ODEs and bifurcation}
+
+Given the first order, nonlinear, separable ODE
+\[ \frac{dx}{dt} = r + x^2 \]
+with a parameter $r \in \mathbb{R},$ we have several options of investigating the behavior of solutions. We shall see that the most straightforward (namely solving the equation) is the hardest and gives the least insight. This is a standard situation, and one reason why qualitative analysis of ODEs (especially those for which an explicit solution cannot be found) is so valuable. 
+
+\noindent \emph{Step 1: Solving the ODEs}
+\[ x' = r + x^2 \Rightarrow \int \frac{dx}{r+x^2} = t + C \]
+\begin{enumerate}
+\item ( $r = -a^2 <0$)
+\begin{equation} \int \frac{dx}{x^2 - a^2} = 
+\begin{cases} 
+\frac{1}{2a} \ln(\frac{x-a}{x+a}) & x^2 > a^2 \\
+\frac{1}{2a} \ln(\frac{a+x}{a-x}) & x^2 < a^2
+\end{cases}
+\end{equation}
+Hence either  
+\[ \frac{x-a}{x+a} = Ce^{2at} \Rightarrow x = a \frac{1+Ce^{2at}}{1-Ce^{2at}} \]
+or 
+\[ \frac{a+x}{a-x} = Ce^{2at} \Rightarrow x = a \frac{Ce^{2at}-1}{1+Ce^{2at}} \]
+\item ($ r = 0$)
+\begin{equation}
+\int \frac{dx}{x^2} = -x^{-1} 
+\end{equation}
+Hence 
+\[ x = \frac{1}{C - t} \]
+\item ($r = a^2 > 0$)
+\begin{equation}
+\int \frac{dx}{x^2 + a^2} = \frac{1}{a} \arctan(x/a) 
+\end{equation}
+Hence
+\[ x = a \tan(at + C) \]
+\end{enumerate}
+It is rather hard to get information about the dependence of each of these solutions on the parameter $r.$ Instead, we may take a different approach: first we shall plot the right-hand side of the equation, $f(y) = r+x^2$ for the three cases:
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{TwoFP}
+\caption{$r<0$}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{SingleFP}
+\caption{$r = 0$}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{NoFP}
+\caption{$r > 0$}
+\end{figure}
+
+\newpage
+
+Note that each zero of $f(y)$ is a \emph{equilibrium point} where $x' = 0!$ We can easily see that decresing the parameter from $r = 1$ (where there are no equilibrium solutions) creates a single equilibrium point when $r = 0,$ which further splits off into two equilibrium points for $r < 0.$ These basic dynamics are captured from the direction fields:  
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{DirFieldTwoFP}
+\caption{$r<0$}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{DirFieldOneFP}
+\caption{$r = 0$}
+\end{figure}
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{DirFieldNoFP}
+\caption{$r > 0$}
+\end{figure}
+ \newpage
+
+This phenomenon of fixed points appearing or disappearing (or stability shifting) is known as bifurcation. Note that the fixed point appearing at $r = 0$ is semi-stable, and of the two fixed points appearing after bifurcation one is stable and the other unstable.
+
+For more information, look at the excellent book \emph{Nonlinear Dynamics and Chaos} by Steven Strogatz.
+
+\begin{enumerate}
+\item[Problem 2.]
+\begin{enumerate}
+\item \begin{align*}
+r^2 + 3r - 4 = 0 \Rightarrow r_1 = 1, r_2 = -4 \\
+\Rightarrow y = C_1 e^t + C_2 e^{-4t} 
+\end{align*}
+\item \begin{align*}
+y'' + 5y' = 0 \Rightarrow r^2 + 5r = 0 \Rightarrow r_1 = 0, r_2 = -5\\
+\Rightarrow y = C_1 e^{-5t} + C_2
+\end{align*}
+\item \begin{align*}
+r^2 + 3r + 2 = 0 \Rightarrow r_1 = -1, r_2 =  -2 \\
+y = C_1 e^{-t} + C_2 e^{-2t}
+\end{align*}
+\item \begin{align*}
+r^2 - 3r + 2 = 0 \Rightarrow r_1=1, r_2 =2\\
+\Rightarrow y = C_1 e^t + C_2 e^{2t} \\
+y(0) = C_1 + C_2 = 1 \\
+y'(0) = C_1 + 2C_2 = 1 \\
+\Leftrightarrow C_1 = 1, C_2 = 0 \Rightarrow y = e^t
+\end{align*}
+\item \begin{align*}
+r^2 + 3r = 0 \Rightarrow r_1 = -3, r_2 = 0 \\
+\Rightarrow y = C_1 e^{-3t} + C_2 \\
+y(0) = C_1 + C_2 = -2 \\
+y'(0) = -3 C_1 = 3 \Rightarrow C_1 = -1 \Rightarrow C_2 = -1\\
+\Rightarrow y = -e^{-3t} - 1
+\end{align*}
+\end{enumerate}
+\end{enumerate}
+\end{document}

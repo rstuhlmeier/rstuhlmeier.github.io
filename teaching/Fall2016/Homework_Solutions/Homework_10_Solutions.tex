@@ -1,0 +1,95 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%        Ordinary Differential Equations 104131
+%           ISE-104131-targil-1.tex
+%
+%	25.10.2010
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -------------------------------------------------------
+% AMS-LaTeX Paper ***************************************
+% -------------------------------------------------------
+\documentclass[a4paper,12pt,leqno]{article}
+\usepackage{amsmath,amssymb,amsfonts}
+\renewcommand{\baselinestretch}{1.4}
+
+
+\headheight=0in
+\headsep=0in
+\footskip=15pt
+\textheight=680pt
+\topskip=0pt
+\topmargin=-10pt
+
+
+
+\vfuzz5pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz5pt % Don't report over-full h-boxes if over-edge is small
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\centering{\Large\textbf{  Ordinary Differential Equations - 10413181}}
+\centering{  Homework No. 10 -- Solutions}
+
+\begin{enumerate}
+\item Given the homogeneous ODE $t^2 y '' - 2y = 0,$ which is of Cauchy-Euler type, we can make a substitution $y = t^r$ to find solutions of this specific form. Hence the ODE is transformed into $t^2r(r-1)t^{r-2} - 2t^r = 0 \Leftrightarrow t^r(r(r-1) - 2) = 0$ which is equivalent to $r^2 - r -2 = 0$ and has roots $r = 2, r = 1.$ It is then easy to check that $y_1 = t^2$ and $y_2 = 1/t$ are a fundamental set of solutions with Wronskian $W = -3.$
+
+We have not shown any use of the method of undetermined coefficients for non-constant coefficients (you may try and see that you run into problems). But, since we already have a fundamental set of solutions, it is attractive to try the method of variation of parameters. \textbf{Remember:} this method works on the \textbf{normalized} equation with leading coefficient 1!
+\[ y'' - \frac{2}{t^2} = 1 \]
+Substituting gives us the matrix equation 
+\[ \begin{pmatrix}
+t^2 & t^{-1} \\
+2t & -t^{-2} 
+\end{pmatrix}
+\begin{pmatrix}
+u_1' \\
+u_2'
+\end{pmatrix}
+= 
+\begin{pmatrix}
+0 \\
+1
+\end{pmatrix}.\]
+Hence 
+\begin{align*}
+u_1' = \frac{1}{3}(t^{-1}) \Rightarrow u_1 = \frac{1}{3} \ln(t) \\
+u_2' = -\frac{1}{3}(t^2) \Rightarrow u_2 = -t^3
+\end{align*}
+Thus $y_1 u_1 + y_2 u_2 = \frac{t^2}{3} \ln(t) - t^2$
+leads to the general solution 
+\[ y = At^2 + \frac{B}{t} + \frac{t^2}{3} \ln(t). \]
+Another possible method of solution is reduction of order, say using $y = t^2 v(t)$ and deriving the first order equation $4tu + t^2 u' = 1$ for $u = v'.$ 
+\item Recall that 
+$ \sum_{n=0}^\infty a_n (x-x_0)^n$ converges absolutely if (for $a_n \neq 0$) 
+\[ \lim \lvert \frac{a_{n+1}(x-x_0)^{n+1}}{a_n(x-x_0)^n}| = \lvert x-x_0| \lim_{n \rightarrow \infty} |\frac{a_{n+1}}{a_n}| = |x-x_0|\cdot L \text{ and } |x - x_0| < 1/L.\]
+\begin{enumerate}
+\item \[ |x-2| \lim|\frac{1}{1}| = |x-2|\cdot 1 \] Hence the radius of convergence is 1.
+\item \[ \lim \frac{n+1}{n} \frac{2^n}{2^{n+1}} = \frac{1}{2} \] Hence the radius of convergence is 2.
+\item \[ \lim | \frac{2^{n+1} (x+1/2)^{n+1} n^2}{(n+1)^2 2^n (x+1/2)^n}| = (2x+1) \lim |\frac{n^2}{(n+1)^2}| = (2x+1) \] Hence the radius of convergence is 1/2.
+\end{enumerate}
+\item Given $y'' - xy' - y = 0$ and expanding about $x_0 = 0$:
+\begin{align*}
+&y = \sum_{n=0}^\infty a_n x^n \\
+&y' = \sum_{n=0}^\infty n a_n x^{n-1} = \sum_{n=0}^\infty (n+1) a_{n+1} x^{n} \\
+&y'' = \sum_{n=0}^\infty n(n-1) a_n x^{n-2} = \sum_{n=0}^\infty (n+2)(n+1) a_{n+2} x^{n} \\
+\end{align*}
+Hence the equation becomes 
+\[ \sum_{n=0}^\infty (n+2)(n+1) a_{n+2} x^{n} - \sum_{n=1}^\infty n a_n x^{n} - \sum_{n=0}^\infty a_n x^n = 0. \]
+This leads to 
+\begin{align*}
+& 2a_2 - a_0 = 0 \\
+& (n+2)(n+1)a_{n+2} - (n+1)a_n = 0 
+\end{align*}
+and so the recursion relation 
+\[ a_{n+2} = \frac{a_n}{n+2}. \]
+We have the fundamental set of solutions 
+\begin{align*}
+& y_1(x) = 1 + \frac{x^2}{2} + \frac{x^4}{8} + \ldots = \sum_{n=0}^\infty \frac{x^{2n}}{2^n n!} \\
+& y_2(x) = x + \frac{x^3}{3} + \frac{x^5}{15} + \ldots = \sum_{n=0}^\infty \frac{2^n n! x^{2n+1}}{(2n+1)!}
+\end{align*}
+Substituting $\psi = 1 + x + \frac{x^2}{2} + \frac{x^3}{3}$ into the equation yields:
+\[ 1 + 2x - x -x^2 - x^3 - 1 - x - \frac{x^2}{2} - \frac{x^3}{3} = -\frac{3x^2}{2} - \frac{4x^3}{3},\]
+so that only terms of order $x^2$ remain (these are small if we are sufficiently close to the expansion point $x_0 = 0$).
+\end{enumerate}
+
+\end{document}
+ 

@@ -1,0 +1,174 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%        Ordinary Differential Equations 104131
+%           ISE-104131-targil-1.tex
+%
+%	25.10.2010
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -------------------------------------------------------
+% AMS-LaTeX Paper ***************************************
+% -------------------------------------------------------
+\documentclass[a4paper,12pt,leqno]{article}
+\usepackage{amsmath,amssymb,amsfonts}
+\renewcommand{\baselinestretch}{1.4}
+
+
+\headheight=0in
+\headsep=0in
+\footskip=15pt
+\textheight=680pt
+\topskip=0pt
+\topmargin=-10pt
+
+
+
+\vfuzz5pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz5pt % Don't report over-full h-boxes if over-edge is small
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\centering{\Large\textbf{  Ordinary Differential Equations - 10413181}}
+\centering{  Homework No. 12 -- Solutions}
+
+\begin{enumerate}
+\item \[ W(x^1,x^2) = \det \begin{pmatrix}
+t & t^2 \\
+1 & 2t
+\end{pmatrix} = t^2. \]
+These are linearly independent everywhere except $t = 0.$
+\item \[ W(x^1,x^2) = \det \begin{pmatrix}
+t & e^t \\
+1 & e^t
+\end{pmatrix} = e^t(1-t). \]
+These are linearly independent everywhere except $t = 1.$
+\item There are two steps to checking that this is a fundamental set of solutions. The first is to check that each of these are in fact \textbf{solutions!} Denoting the matrix by $A$:
+\begin{align*}
+\frac{d}{dt}x^1 = e^{2t} \begin{pmatrix}
+2\\
+2\\
+2
+\end{pmatrix}
+= A x^1 \\
+\frac{d}{dt}x^2 = e^{-t} \begin{pmatrix}
+-1\\
+0\\
+1
+\end{pmatrix}
+= A x^2 \\
+\frac{d}{dt}x^3 = e^{-t} \begin{pmatrix}
+0\\
+-1\\
+1
+\end{pmatrix}
+= A x^3 
+ \end{align*}
+ Subsequently we need to check that they are a fundamental set, for which we employ the Wronskian:
+ \[ W(x^1,x^2,x^3) = det\begin{pmatrix}
+ e^{2t} & e^{-t} & 0 \\
+  e^{2t} & 0 & e^{-t} \\
+  e^{2t} & -e^{-t} & -e^{-t} 
+    \end{pmatrix}
+    = 3 \neq 0 \]
+
+\item For the matrix 
+\[A =  \begin{pmatrix}
+5 & -1 \\
+3 & 1 
+\end{pmatrix}\]
+we have associated a characteristic polynomial $\lambda^2 - 6\lambda + 8 = 0.$ This has roots $\lambda_1 = 4, \, \lambda_2 = 2.$
+Eigenvectors $\mathbf{x}$ to eigenvalue $\lambda_1$ must fulfill $(\mathbf{A} - 2 \mathbf{1})\mathbf{x} = 0$ or 
+\[ \begin{pmatrix}
+3 & -1 \\
+3 & -1 
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2
+\end{pmatrix}
+= 
+\begin{pmatrix}
+0 \\
+0
+\end{pmatrix} \]
+Hence $3x_1 = x_2$ and an eigenvector is given by
+\[ \xi_1 = \begin{pmatrix}
+1 \\
+3
+\end{pmatrix}.
+\]
+Eigenvectors $\mathbf{x}$ to eigenvalue $\lambda_2$ must fulfill $(\mathbf{A} - 4 \mathbf{1})\mathbf{x} = 0$ or 
+\[ \begin{pmatrix}
+1 & -1 \\
+3 & -3 
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2
+\end{pmatrix}
+= 
+\begin{pmatrix}
+0 \\
+0
+\end{pmatrix} \]
+Hence $x_1 = x_2$ and another eigenvector is given by
+\[ \xi_2 = \begin{pmatrix}
+1 \\
+1
+\end{pmatrix}.
+\]
+The general solution is then written in the form 
+\[ \mathbf{x}(t) = c_1 e^{2t} \begin{pmatrix}
+1 \\
+3
+\end{pmatrix}
++ c_2 e^{4t} \begin{pmatrix}
+1 \\
+1
+\end{pmatrix} \]
+for arbitrary constants $c_1, c_2$ to be determined by the initial conditions. 
+Given the initial condition 
+\[ \mathbf{x}(t=0) = \begin{pmatrix}
+4 \\
+-2
+\end{pmatrix}
+\]
+we find 
+\[  c_1 \begin{pmatrix}
+1 \\
+3
+\end{pmatrix}
++ c_2  \begin{pmatrix}
+1 \\
+1
+\end{pmatrix} = 
+\begin{pmatrix}
+4 \\
+-2
+\end{pmatrix}\]
+or equivalently
+\[ \begin{pmatrix}
+1 & 1 \\
+3 & 1 
+\end{pmatrix}
+\begin{pmatrix}
+c_1 \\
+c_2
+\end{pmatrix}
+= 
+\begin{pmatrix}
+4 \\
+-2
+\end{pmatrix}\]
+Inverting the matrix then yields $c_1 = -3$ and $c_2 = 7.$ The solution to the IVP is thus
+\[ -3 e^{2t} \begin{pmatrix}
+1 \\
+3
+\end{pmatrix}
++ 7 e^{4t} \begin{pmatrix}
+1 \\
+1
+\end{pmatrix} \]
+\end{enumerate}
+
+\end{document}
+ 

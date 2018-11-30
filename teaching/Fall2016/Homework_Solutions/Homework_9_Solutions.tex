@@ -1,0 +1,126 @@
+\documentclass[10pt,a4paper]{letter}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\linespread{2}
+\usepackage[left=4cm,right=4cm,top=2cm,bottom=2cm]{geometry}
+\begin{document}
+
+
+\begin{center}
+\begin{Large}
+\textbf{Ordinary Differential Equations - 10413181}\\
+\end{Large}
+\vspace{1em}
+\begin{large}Homework No. 9 Solutions\end{large}
+\end{center}
+
+\begin{enumerate}
+\item Given the ODE $y'' - y' - 2y = 2e^{-t},$ we have several methods of solving this equation. For variation of parameters we shall need two solutions to the homogeneous problem, and it is wise to find them for the method of undetermined coefficients as well, since they may indicate that we have to change our ansatz. That is, if the inhomogeneity is itself a solution to the homogeneous problem, we need to make an ansatz $t \times \ldots$ 
+The homogeneous problem has the characteristic polynomial $r^2 - r - 2 = 0$ with roots $r = 2, \, -1.$ Hence, since $e^{-t}$ is a solution to the homogeneous problem, we need to modify our undetermined coefficients idea. 
+\begin{enumerate}
+\item From what was discussed above, make a trial ansatz $\psi = At e^{-t}$ (NOT $\psi = Ae^{-t}$, but you can try it if you're not sure). $\psi' = Ae^{-t} - Ate^{-t}$ and $\psi'' = -2Ae^{-t} + Ate^{-t}.$ Plugging into the ODE gives
+\[ -3Ae^{-t} = 2 e^{-t} \Rightarrow A = -2/3. \]
+Hence a particular solution is given by 
+\[ \psi = -2t/3\cdot \exp(-t) \] 
+\item Having found two solutions $y_1 = e^{-t}$ and $y_2 = e^{2t},$ we can also easily use the variation of parameters method:
+\begin{equation}
+\begin{pmatrix}
+e^{-t} & e^{2t} \\
+-e^{-t} & 2e^{2t}
+\end{pmatrix}
+\begin{pmatrix}
+u_1' \\
+u_2'
+\end{pmatrix}
+= 
+\begin{pmatrix}
+0 \\
+2e^{-t}
+\end{pmatrix}
+\end{equation}
+Noting that the Wronskian is $W = 3e^{t},$ we invert to get
+\begin{equation}
+\begin{pmatrix}
+u_1' \\
+u_2'
+\end{pmatrix}
+= \frac{1}{3 e^{t}}
+\begin{pmatrix}
+2e^{2t} & -e^{2t} \\
+e^{-t} & e^{-t}
+\end{pmatrix}\begin{pmatrix}
+0 \\
+2e^{-t}
+\end{pmatrix}
+\end{equation}
+Hence 
+\begin{align*}
+u_1' = -2t/3 \\
+u_2' = 2e^{-3t}/3
+\end{align*}
+and so $\psi = e^{-t}\cdot -2t/3 + e^{2t} \cdot 2e^{-3t}/3 = -2te^{-t}/3 - 2 e^{-t}/9.$ The second term of this is simply a linear combination of a solution to the homogeneous equation, so in fact the simplest particular solution to the inhomogeneous problem is seen to be the first term
+\[ \psi = -2t/3 \exp(-t).\]
+\item Finally, if we cannot remember any of the above methods, we can always use reduction of order. A solution to the homogeneous problem is easy to find for constant coefficients, let's take $y_1 = e^{-t}.$ Then say $y = v(t) y_1(t)$ and substitute:
+\[ y'' = v'' e^{-t} - 2v' e^{-t} + v e^{-t}, \quad y' = v'e^{-t} - v e^{-t} \]
+Plugging this into the inhomogeneous ODE gives
+\[ v''e^{-t} - 2v'e^{-t} - v'e^{-t} = 2 e^{-t} \]
+which we see contains only $v''$ and $v'.$ Substitute $v' = u$ and this turns into 
+\[ u' - 3u = 2 \]
+which is a first order equation that we know how to solve easily by the integrating factor method. The integrating factor is $\mu = e^{-3t}$ and leads to the equation $e^{-3t} u = -(2/3) e^{-3t} + C \Rightarrow u = -2/3 + Ce^{3t}.$ Integrating returns $v = -2t/3 - Ce^{3t}/3$ and finally multiplying by $e^{-t}$ gives $y = -2t/3 \cdot e^{-t} - (1/3) e^{2t},$ where again only the first term is relevant.
+\item We are now asked to treat the problem $y'' - y' - 2y = 1 + 2e^{-t},$ which is related to the problem we have just treated. We show that we can solve $y'' - y' - 2y = 1,$ and add the particular solutions of this and the previous problem, to obtain a solution to the problem with right-hand side $1 + 2 e^{-t}.$ 
+Since we already have all the machinery, it is easiest to use variations of parameters. Copy the same matrix as above, but replace the inhomogeneous term:
+\begin{equation}
+\begin{pmatrix}
+u_1' \\
+u_2'
+\end{pmatrix}
+= \frac{1}{3 e^{t}}
+\begin{pmatrix}
+2e^{2t} & -e^{2t} \\
+e^{-t} & e^{-t}
+\end{pmatrix}\begin{pmatrix}
+0 \\
+1
+\end{pmatrix}
+\end{equation}
+Hence 
+\begin{align*}
+u_1' = -\frac{1}{3}e^t \\
+u_2' = -\frac{1}{6}e^{-2t}
+\end{align*}
+so that $u_1 y_1 + u_2 y_2 = -1/3 - 1/6 = -1/2.$ It is now easy to check that 
+\[ \psi = -2t/3 \cdot e^{-t} - 1/2 \]
+is a particular solution to $y'' - y' - 2y = 1 + 2e^{-t}$ by substituting (if needed). The moral of the story is that you can solve an initial value problem 
+\[ p(x)y'' + q(x) y' + r(x) y = \sum_{i=0}^N g_i(t) \] by solving $N$ different, separate initial value problems for each of the $g_i$s.
+\end{enumerate}
+\item \begin{enumerate}
+\item As remarked above, the variation of parameters method requires two solutions $y_1$ and $y_2$ of the homogeneous problem. However, depending on the values of $m, \gamma, $ and $k,$ we may have (recall from class)
+\begin{align*}
+& y_1 = Ae^{r_1 t}, \, y_2 = Be^{r_2 t} \text{ if } \gamma^2 - 4km > 0 \\
+& y_1 = Ae^{-\gamma t/2m}, \, y_2 = Bte^{-\gamma t/2m} \text{ if } \gamma^2 - 4km = 0 \\
+& y_1 = Ae^{-\gamma t/2m}\cos(\mu t), \, y_2 = Be^{-\gamma t/2m}\sin(\mu t) \text{ if } \gamma^2 - 4km < 0 
+\end{align*}
+where $\mu = \sqrt{4km - \gamma^2}/(2m) > 0.$ Hence we must solve separately for each of these cases. The advantage of undetermined coefficients is that we do not need to use these solutions.
+
+Say $\psi = A \cos(\omega t) + B \sin(\omega t).$ Plugging into the ODE gives immediately (since terms involving sin and cos must be treated separately)
+\begin{align*}
+& - \omega^2 m B - \gamma \omega A + k B = 0 \\
+& - \omega^2 m A + \gamma \omega B + kA = F_0
+\end{align*} 
+which leads to 
+\[ A = F_0 \frac{k-\omega^2 m}{(k-\omega^2 m)^2 + \gamma^2 \omega^2}, \quad B = F_0 \frac{\gamma \omega}{(k-\omega^2 m)^2 + \gamma^2 \omega^2} \]
+so that 
+\[ \gamma = \frac{F_0}{(k-\omega^2 m)^2 + \gamma^2 \omega^2} \left( (k-\omega^2 m) \cos(\omega t) + \gamma \omega \sin(\omega t) \right). \]
+We could sum this up into one sinusoidal term, but it is not strictly necessary. We see that it is a pure oscillation.
+\item Regarding the long-time behaviour, we note that $r_1, r_2$ are always negative in the case of two real roots, and that $-\gamma t/2m$ is likewise negative. This means that the solutions to the homogeneous problem given above are decaying with time, while the particular solution is purely oscillatory. Thus, in the large time limit, the solution to this forced system tends to that of the particular solution
+\[ y = y_{hom} + \psi \rightarrow \psi \quad  (t \rightarrow \infty). \]
+This is to say that the initial conditions (which determine the specific form of $y_{hom},$ but have no effect on $\psi$) are forgotten after some time, where the forcing dominates the behaviour. 
+
+
+\end{enumerate}
+\end{enumerate}
+
+
+\end{document}

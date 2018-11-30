@@ -1,0 +1,76 @@
+\documentclass[10pt,a4paper]{letter}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\linespread{2}
+\usepackage[left=4cm,right=4cm,top=2cm,bottom=2cm]{geometry}
+\begin{document}
+
+
+\begin{center}
+\begin{Large}
+\textbf{Ordinary Differential Equations - 10413181}\\
+\end{Large}
+\vspace{1em}
+\begin{large}Homework No. 7\end{large}
+\end{center}
+
+\begin{enumerate}
+\item For the following expressions (with $t \in \mathbb{R}$), identify the real part, the imaginary part, the complex conjugate, and use Euler's formula to write each as $a + i b$
+\begin{enumerate}
+\item $ \exp((1+2i)t)) = e^t e^{2it} $ \\
+Complex conjugate: $ e^t e^{-2it} $ \\
+Euler's formula: $e^t(\cos(2t) + i \sin(2t))$ \\
+Real part: $e^t \cos(2t)$ \\
+Imaginary part: $e^t \sin(2t)$
+\item $ \exp((2+4i)t)) = e^{2x} e^{4ix}$ \\
+Complex conjugate: $e^{2x} e^{-4ix}$ \\
+Real part: $ (z + \bar{z})/2 = e^{2x} \cos(4x) $\\
+Imaginary part: $(z - \bar{z})/2i = e^{2x} \sin(4x)$ \\
+Euler's formula: $e^{2x} (\cos(4x) + i \sin(4x)) $
+\item $e^{2 + i\pi/2} = e^2 e^{i\pi/2}$ \\
+Complex conjugate: $e^2 e^{-i \pi/2} $\\
+Euler's formula: $e^2(\cos(\pi/2) + i \sin(\pi/2) = i e^2 \sin(\pi/2)$ \\
+Real part: 0 \\
+Imaginary part: $e^2(\sin(\pi/2))$ 
+\end{enumerate}
+\item Find solutions to the following initial value problems, write these using Euler's formula, and describe their behavior for large time $t$
+\begin{enumerate}
+\item $y'' + 4y = 0, \quad y(0) = 0, y'(0)=1 $ \\
+Characteristic polynomial $r^2 + 4 = 0$ has roots $ r = \pm 2i$ \\
+$y = Ae^{2it} + Be^{-2it} $\\
+$y(0) = A+B = 0 \Rightarrow A = - B $\\
+$y'(0) = 2iA - 2iB = 1 \Rightarrow B = i/4$\\
+$\Rightarrow y = -ie^{2it}/4 + ie^{-2it}/4 \Leftrightarrow y = \sin(2t)/2 $
+\item $y'' + y' + 5y = 0, \quad y(0) = 1, y'(0) = 0$ \\
+Characteristic polynomial $r^2 + 4r + 5 =0$ has roots $r = -2 \pm i$ \\
+$\Rightarrow y = A e^{(-2+i)t} + Be^{(-2-i)t} = e^{-2t}(C \cos(t) + D \sin(t)) $\\
+$y(0) = C = 1$ \\
+$y'(0) = -2C + D = 0 \Rightarrow D = 2$ \\
+$\Rightarrow y = e^{-2t}(\cos(t) + 2 \sin(t)) $
+\item $y'' - 6y' + 13y = 0, \quad y(\pi/2) = 0, y'(\pi/2) = 2$ \\
+Characteristic polynomial $r2 - 6r + 13 =0$ has roots $3 \pm 2i$ \\
+$\Rightarrow y = e^{3t} (C_1 \sin(2t) + C_2 \cos(2t))$ \\
+$y(\pi/2) = e^{3 \pi/2} (-C_2) = 0 \Rightarrow C_2 = 0 $ \\
+$y'(\pi/2) = -e^{3 \pi/2} 2 C_1 = 2  \Rightarrow C_1 = -e^{3 \pi/2} $ \\
+$\Rightarrow y = -e^{3 \pi/2} \sin(2t)$
+
+\end{enumerate}
+\item (Optional) Pick one of the problems above and determine the envelope and (pseudo-) frequency of the oscillation, if appropriate.
+\item In class we saw that certain kinds of second-order ODEs with non-constant coefficients can be reduced to the constant coefficient case with a suitable transformation. For the Cauchy-Euler type equation
+\[ t^2 y'' + 4ty' + 2y =0 \]
+use the substitution $x = \ln(t)$ to calculate $dy/dt, \, d^2 y/d t^2$ and solve the equation.
+
+\vspace{2em}
+The substitution $x = \ln(t)$ implies
+\[ \frac{dy}{dt} = \frac{dy}{dx}\frac{dx}{dt} = \frac{1}{t}\frac{dy}{dx}, \quad \frac{d^2 y}{dt^2} = \frac{-1}{t^2}\frac{dy}{dx} + \frac{1}{t^2}\frac{d^2y}{dx^2} \]
+Substituting into the equation then yields the constant coefficient equation
+\[ y''+3y' +2y =0\]
+with characteristic polynomial $r^2 + 3r +2 =0$ with roots $r = -2,-1.$ Hence
+\[ y = Ae^{-2x} + Be^{-x} = A e^{-2 \ln(t)} + Be^{-\ln(t)} = \frac{A}{t^2} + \frac{B}{t}. \]
+
+\end{enumerate}
+
+
+\end{document}

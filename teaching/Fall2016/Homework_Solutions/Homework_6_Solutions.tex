@@ -1,0 +1,80 @@
+\documentclass[10pt,a4paper]{letter}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\linespread{2}
+\usepackage[left=4cm,right=4cm,top=2cm,bottom=2cm]{geometry}
+\begin{document}
+
+
+\begin{center}
+\begin{Large}
+\textbf{Ordinary Differential Equations - 10413181}\\
+\end{Large}
+\vspace{1em}
+\begin{large}Homework No. 6 Solutions\end{large}
+\end{center}
+
+\begin{enumerate}
+\item 
+\begin{enumerate}
+\item $ y'' + 4y = 0, \quad y_1(t) = \cos(2t), y_2(t) = \sin(2t).$
+
+ Calculate $y_1'' = -4 y_1, \quad y_2'' = -4 y_2 $
+So both are solutions.
+\[ W = y_1 y_2' - y_2 y_1' = \cos(2t) 2 \cos(2t) - \sin(2t) (-2) \sin(2t) = 2 \neq 0 \]
+\item $ x^2 y'' - x(x+2)y' + (x+2)y = 0, \, (x>0), \quad y_1(x) = x, \, y_2(x) = xe^{x}$
+
+Calculate $y_1' = 1, y_1'' = 0$ so that 
+\[ x^2 y_1'' - x(x+2)y_1' + (x+2)y_1 = 0 - x(x+2) + (x+2)x = 0. \]
+Also: $y_2' = e^x + xe^x, y_2'' = 2e^x + xe^x$ so that
+\begin{align*}
+ x^2 y_2'' - x(x+2)y_2' + (x+2)y_2 = x^2(2e^x + xe^x) - x(x+2)(e^x + xe^x) + (x+2)xe^x = 0 
+\end{align*}
+Finally the Wronskian 
+\[ W = x(e^x + xe^x) - xe^x = x^2 e^x \neq 0 \quad (x > 0). \]
+\end{enumerate} 
+\item For the equation
+\[ y'' - y' - 2y = 0 \]
+show that $y_1 = e^{-t}, \, y_2 = e^{2t}$ are a fundamental set of solutions.
+
+Here we calculate the Wronskian 
+\[ W = e^{-t} 2e^{2t} + e^{-t}e^{2t} = 3 e^t \neq 0 \]
+\begin{enumerate}
+\item Note that 
+\begin{align*}
+y_3 = -2y_2 \\
+y4 = y_1 + 2 y_2 \\
+y_5 = 2y_1 + 4 y_2
+\end{align*}
+Since the equation is linear, and we have checked $y_1$ and $y_2$ are solutions, so all linear combinations are solutions too. Hence we do not need to do anything further!
+\item Here we recast the pairs by noting which is a linear combination of another solution:
+\begin{align*}
+(y_1,y_3) \Leftrightarrow (y_1,-2y_2) \text{ is a fundamental set} \\
+(y_2,y_3) \Leftrightarrow (y_2,-2y_2) \text{ is not a fundamental set} \\
+(y_1,y_4) \Leftrightarrow (y_1,y_1+2y_2) \text{ is a fundamental set} \\
+(y_4,y_5) \Leftrightarrow (y_1+2y_2,2(y_1+2y_2)) \text{ is not a fundamental set}
+\end{align*}
+Of course one can also check the Wronskians all by hand.
+\end{enumerate}
+\item Determine the Wronskian of two solutions of the following equation 
+\[ x^2 y'' + xy' + (x^2 - \nu^2)y = 0 \]
+Rewriting in normal form so that the coefficient of $y''$ is 1, use Abel's formula to find
+\[ W = Ce^{-\int 1/x dx} = C/x \]
+\item Find the general solution to the following equation:
+\[ y'' - 2y' + 2y = 0 \]
+Substitute $y = e^{rt}$ to get a characteristic polynomial
+\[ r^2 - 2r + 2 = 0 \]
+with roots
+\[ r = \frac{2 \pm \sqrt{-4}}{2} = 1 \pm i \]
+This gives a solution
+\[ y = C_1 e^{t(1+i)} + C_2 e^{t(1-i)} \]
+or
+\[ y = C_1 e^t (\cos t + i \sin t) + C_2 e^t ( \cos t - i \sin t) \]
+or
+\[ y = e^t(A \cos t + B \sin t). \]
+\end{enumerate}
+
+
+\end{document}

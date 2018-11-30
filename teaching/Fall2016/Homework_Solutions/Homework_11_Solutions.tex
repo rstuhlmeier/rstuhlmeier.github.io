@@ -1,0 +1,113 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%        Ordinary Differential Equations 104131
+%           ISE-104131-targil-1.tex
+%
+%	25.10.2010
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -------------------------------------------------------
+% AMS-LaTeX Paper ***************************************
+% -------------------------------------------------------
+\documentclass[a4paper,12pt,leqno]{article}
+\usepackage{amsmath,amssymb,amsfonts}
+\renewcommand{\baselinestretch}{1.4}
+
+
+\headheight=0in
+\headsep=0in
+\footskip=15pt
+\textheight=680pt
+\topskip=0pt
+\topmargin=-10pt
+
+
+
+\vfuzz5pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz5pt % Don't report over-full h-boxes if over-edge is small
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\centering{\Large\textbf{  Ordinary Differential Equations - 10413181}}
+\centering{  Homework No. 11 -- Solutions}
+
+\begin{enumerate}
+\item $ y '' + \cos(x) y = 0$ is given.
+We make the power series ansatz (about $x_0 = 0$)
+\[ y = \sum_{n=0}^\infty a_n x^n, \text{ so that } y'' = \sum_{n=0}^\infty (n+2)(n+1) a_{n+2} x^n. \]
+Using the Taylor series of $\cos$ about zero, 
+\[ \cos(x) = 1 - \frac{x^2}{2} + \frac{x^4}{4!} - \ldots \]
+we see
+\[ \sum_{n=0}^\infty (n+2)(n+1) a_{n+2} x^n = - \sum_{n=0}^\infty a_n x^n \left(1 - \frac{x^2}{2} + \frac{x^4}{4!} - \ldots \right). \]
+Collecting terms, we find 
+\begin{align*}
+2 a_2 = - a_0 \\
+6 a_3 = - a_1 \\
+12 a_4 = a_0 
+\end{align*}
+which suffices to write down the first four terms of the solution:
+\[ y = a_0 + a_1 x - \frac{a_0}{2}x^2 - \frac{a_1}{6}x^3 + \frac{a_0}{12}x^4 + \ldots \]
+In principle this could be continued as long as desired.
+\item Note \[ \sum_{n=0}^\infty x^n := \lim_{N \rightarrow \infty} \sum_{n=0}^N x^n. \]
+Hence 
+\begin{align*}
+& (1-x) \sum_{n=0}^\infty x^n = (1-x)\lim_{N \rightarrow \infty} \sum_{n=0}^N x^n = \lim_{N \rightarrow \infty} (1-x) \sum_{n=0}^N x^n \\
+&= \lim_{N \rightarrow \infty} (1-x) (1 + x + x^2 + \ldots + x^N) \\
+&= \lim_{N \rightarrow \infty} (1 + x \ldots + x^N - x - x^2 - \ldots - x^{N+1})\\
+&= \lim_{N \rightarrow \infty} (1-x^{N+1}) = 1.
+\end{align*}
+\item \begin{enumerate}
+\item \begin{align*}
+& u'' + 2u' + 2u = 0 \\
+& v:= u' \Rightarrow v' = u'' = -2u' - 2u = -2v - 2u\\
+& \begin{cases}
+u' = v \\
+v' = -2v -2u
+\end{cases}
+\end{align*}
+\item 
+\begin{align*}
+& t^2 u'' + tu' + (t^2 - 1) u = 0 \\
+& v:= u' \Rightarrow v' = u'' = -\frac{u'}{t} - \frac{(t^2 -1)u}{t^2} = -\frac{v}{t} - \frac{(t^2 -1)u}{t^2} \\
+& \begin{cases}
+u' = v\\
+v' = -\frac{v}{t} - \frac{(t^2 -1)u}{t^2}
+\end{cases}
+\end{align*}
+\item \begin{align*}
+& u'''' - u = 0 \\
+& u' =:v,\quad v'=:w=u'',\quad w'=:z=u''',\quad z'=u''''=u \\
+&\begin{cases}
+u' = v\\
+v' = w\\
+w' = z\\
+z' = u
+\end{cases}
+\end{align*}
+\end{enumerate}
+\item The system is equivalent to the following in matrix form:
+\[ \begin{pmatrix}
+1 & -2 & 3 \\
+-1 & 1 & -2 \\
+2 & -1 & -3 
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+x_3
+\end{pmatrix}
+= 
+\begin{pmatrix}
+7 \\
+-5 \\
+4
+\end{pmatrix}. \]
+Inverting the matrix leads to 
+\[ x_1 = 2\dfrac{1}{3}, \quad x_2 = -1 \dfrac{1}{3}, \quad x_3 = \dfrac{2}{3}. \]
+\item \begin{enumerate}
+\item The characteristic polynomial associated with matrix A is $\lambda^2 - \lambda - 2 = 0$ which has roots 2 and -1.
+\item The characteristic polynomial associated with matrix B is $\lambda^2 - 2 \lambda - 35 = 0$ which has roots 7 and -5.
+\end{enumerate}
+\end{enumerate}
+
+\end{document}
+ 

@@ -1,0 +1,66 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\title{Homework 2 Solutions}
+\date{}
+\begin{document}
+
+\maketitle
+\begin{enumerate}
+\item Identifying this equation as $M + Ny' = 0$ with 
+\begin{align*}
+M = 2t \sin(y) + y^3 e^{t} \\
+N = t^2 \cos(y) + 3y^2 e^t
+\end{align*}
+we find that 
+\[ M_y = 2t \cos(y) + 3 y^2 e^t = N_t \]
+Hence $\exists \phi: \nabla \phi = (M,N),$ and 
+\begin{align*}
+\phi = \int M dt +k(y) = \int 2t \sin(y) + y^3 e^t dt + k(y) = t^2 \sin(y) + y^3 e^t + k \\
+\phi = \int N dy + h(t) = \int t^2 \cos(y) + 3y^2 e^t dy + h(t) = t^2 \sin(y) + y^3 e^t + h
+\end{align*}
+Hence the solution curves are given by 
+\[ t^2 \sin(y) + y3 e^t = C \]
+Inspecting
+\[ \frac{d}{dt}( t^2 \sin(y) + y3 e^t) = 0 \]
+recovers the ODE.
+\item $y' + y = 5 \sin(2t)$ is a candidate for the integrating factor method with $\mu = e^t.$ Thus:
+\[ y e^t = 5 \int e^t \sin(2t) dt \] 
+By using partial integration twice, we find 
+\begin{align*}
+\int e^t \sin(2t) dt = e^t \sin(2t) - \int e^t 2 \cos(2t) dt  \\
+= e^t \sin(2t) - \left( e^t 2 \cos(2t) + 4 \int e^t \sin(2t) dt \right)
+\end{align*}
+Hence $5 \int e^t \sin(2t) dt = e^t \sin(2t) - e^t 2 \cos(2t),$ resulting in 
+\[ y = \sin(2t) - 2 \cos(2t) + Ce^{-t}. \]
+\item This equation is separable, such that 
+\[ \int \frac{dy}{\cos^2(2y)} = \int \cos^2(x) dx \]
+These integrals lead to 
+\[ \tan(2y) = x + \sin(2x)/2 + C \]
+for $\cos(2y) \neq 0.$ Another solution is $ y = \pm(2n+1) \pi/4$ for any integer $n$.
+\item Writing the equation in normal form $y' + y/2 = 3t^2/2$ allows an immediate identification of the integrating factor $\mu = e^{t/2}.$ Resolving the integral $\int e^{t/2} t^2 dt$ by partial integration (twice, differentiating the $t^2$ term) yields
+\[ y = c e^{-t/2} + 3t^2 - 12t + 24 \]
+\item This equation is of the type $M + Ny' = 0$ with 
+\begin{align*}
+M = 2x + 3\\
+N = 2y - 2
+\end{align*}
+Inspection yields
+\[ M_y = 2 = N_x \]
+hence there is a potential $\phi,$ such that 
+\begin{align*}
+\phi = \int 2x +3 dx + c(y) = x^2 + 3x + C \\
+\phi = \int 2y -2 dy + d(x) = y^2 - 2y + C
+\end{align*}
+and the solution curves are 
+\[ x^2 + 3x - 2y + y^2 = C. \]
+\item The integrating factor is $\mu = e^{-4t},$ which yields (integrating over 1 on the RHS)
+\[ y = (t+C)e^{4t} \]
+the IVP $y(0) = 2$ implies $C = 2.$
+
+\end{enumerate}
+
+
+\end{document}

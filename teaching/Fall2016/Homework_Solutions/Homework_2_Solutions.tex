@@ -1,0 +1,47 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\title{Homework 2 Solutions}
+\date{}
+\begin{document}
+
+\maketitle
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item $ y' + \tan(x) y = x \sin(2x)$ invites one to apply the integrating factor method. $\mu = e^{\int \tan(x) dx} = e^{-\ln(\cos(x))}.$ Hence
+\begin{align*}
+\frac{y}{\cos(x)} = \int \frac{x \sin(2x)}{\cos(x)} dx = \int \frac{2x \sin(x) \cos(x)}{\cos(x)} dx \\
+= 2 \int x \sin(x) dx = 2(\sin(x) - x\cos(x))
+\end{align*}
+Hence: $y = 2 \sin(x) \cos(x) - 2x\cos^2(x) + C \cos(x)$
+\item $y' - 3x^2 y = -x^2, \quad y(0) = 1$ again should be treated by the integrating factor method, with $\mu = e^{-x^3}.$ Integrating both sides gives
+\[ y = 1/3 + Ce^{x^3} \]
+and the initial value $y(0) = 1 \Rightarrow C = 2/3.$
+\end{enumerate}
+\item Using either separation or the integrating factor method leads one to the form of solution
+\[ y = C e^{-\int \frac{\ln^2(x)}{\sin^2(x)} dx}. \]
+The initial condition is $y(5) = 0,$ which can only be satisfied if $C=0.$ Hence the integral need not be treated, and the solution $y = 0$ is the unique solution (at least on an interval $[5,2\pi]$).
+\item \begin{enumerate}
+\item Separation gives
+\[ \frac{y'}{y^2} = -\sin(x) \] 
+hence 
+\[ y = \frac{-1}{\cos(x) + C} \]
+\item Separation again yields
+\[ \int \frac{1}{1+y^2} dy = 2 \int 1+ x dx \]
+or $y = \tan(2x+x^2 + C),$ whereupon the initial condition implies $C = 0.$
+\end{enumerate}
+\begin{enumerate}
+\item Making the substitution reduces the ODE to $xv' = 1+v$ which is separable. Hence
+\[ \int \frac{dv}{1+v} = \int \frac{dx}{x} \]
+so that $\ln|1+v| = \ln|x| + C \Rightarrow |1+v| = |x|e^C \Leftrightarrow v=cx -1$ for $c \neq 0.$ Transforming back to the original variables gives $y = cx^2 - x$ again for $c \neq 0.$
+\item Substitution again reduces the ODE to a separable equation $xv' = 1+v^2,$ so that 
+\[ \int \frac{dv}{1+v^2} = \int \frac{1}{x} dx \]
+Hence $\arctan(v) = \ln|x| + C \Rightarrow y = x \tan(\ln|x| + C)$
+\end{enumerate}
+\end{enumerate}
+
+
+\end{document}

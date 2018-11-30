@@ -1,0 +1,74 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%        Ordinary Differential Equations 104131
+%           ISE-104131-targil-1.tex
+%
+%	25.10.2010
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -------------------------------------------------------
+% AMS-LaTeX Paper ***************************************
+% -------------------------------------------------------
+\documentclass[a4paper,12pt,leqno]{article}
+\usepackage{amsmath,amssymb,amsfonts}
+\renewcommand{\baselinestretch}{1.4}
+
+
+\headheight=0in
+\headsep=0in
+\footskip=15pt
+\textheight=680pt
+\topskip=0pt
+\topmargin=-10pt
+
+
+
+\vfuzz5pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz5pt % Don't report over-full h-boxes if over-edge is small
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\centering{\Large\textbf{  Ordinary Differential Equations - 10413181}}
+\centering{  Homework No. 8 -- Solutions}
+
+\begin{enumerate}
+\item \begin{enumerate}
+\item There was a typo in this question that was quietly corrected. If you solved the original equation $y'' - 2y' - y = 0$ by making an ansatz $y = e^{rt}$ you should have been led to the characteristic polynomial $r^2 - 2r -1 = 0,$ with roots $r = 1 \pm \sqrt{2}.$ The general solution is then 
+\[ y = A e^{(1 + \sqrt{2})t} + B e^{(1 - \sqrt{2})t}. \]
+The corrected problem reads $y'' - 2y' + y = 0.$ Hence, calculating the characteristic polynomial yields $r = 1$ as a repeated root. Hence $y_1 = e^t$ is one solution. We may use reduction of order to find the second, assuming $y_2 = v(t) y_1(t).$ Hence we are led to the equation $v''e^t = 0$ which involves only $v''.$ You may either substitute $v' = u$ to reduce this to a first order equation $u' = 0,$ or simply see that those functions with second derivative vanishing are polynomials of degree 1, i.e. $v = Ct.$ Hence $y_2 = Ct e^t$ and the general solution is 
+\[ y = Ae^t + Bt e^t. \]
+\item $y'' - 6y' + 9y = 0$ leads to the characteristic polynomial $r^2 -6r + 9 = 0$ which has the repeated root $r = 3.$ Again, use reduction of order to find $y_2 = v(t) y_1 = v(t) e^{3t},$ which leads exactly as before (repeating all the steps as above) to $v'' = 0$ and $y_2 = Ate^{3t}.$ Hence the general solution is
+\[ y = Ate^{3t} + B e^{3t}. \]  
+\end{enumerate}
+\item $t^2 y'' + 3ty' + y = 0$ has a solution $y_1 = t^{-1}$ given. Substituting $y_2 = v/t$ we calculate the derivatives
+\begin{align*}
+& y_2' = v' t^{-1} - v t^{-2} \\
+& y_2'' = v''t^{-1} - 2v' t^{-2} + 2v t^{-3} 
+\end{align*}
+and substituting these into the equation, we find $v''t - 2v' + 3v' = 0 \Leftrightarrow v''t + v' = 0$ which reduces upon substituting $u = v'$ to $u' + u/t = 0.$ This is now a first order equation, which has an integrating factor $\mu = t,$ so $d/dt (tu) = 0 \Rightarrow tu = C.$ Hence $v = \int u dt = C \ln(t)$ and 
+\[ y_2 = \frac{\ln(t)}{t}. \]
+\item We have the second order ODE $(x-1)y'' - xy' + y = 0, \quad x> 1$ with solution $y_1 = e^x.$ We can proceed straightforwardly with standard methods of order reduction: $y_2 = v(x) e^x$ leads to the equation in $v'$ and $v''$
+\[ (x-1)v'' + v'(x-2) = 0. \]
+Substituting $v' = u$ and dividing by $x-1$ (recall that $x>1$ is assumed), we then have the first order equation 
+\[ u' + \frac{x-2}{x-1} u = 0. \]
+Using separation
+\[  \int \frac{u'}{u} du = -\int \frac{x-2}{x-1} dx = -\int \frac{1-y}{y} dy = -y + \int \frac{1}{y} dy = 1 - x + \ln(x-1) \]
+where the substitution $y = x-1$ is used in an intermediate step. Hence
+\[ u = (x-1)e^{1-x} \Rightarrow v = \int u dx = -x e^{1-x} \]
+where the integral may be easily done using partial integration or substitution (e.g.\ with $\xi = (1-x)$). Hence $y_2 = -ex,$ or (since we are ultimately not interested in constants, and only seek another solution -- remember the equation is linear, so $\alpha \cdot y_2$ is still a solution $\forall \alpha \in \mathbb{R}$) $y_2 = x.$ 
+
+\emph{Remark:} using reduction of order via the Wronskian $W = y_1' y_2 - y_1 y_2'$ is another possibility! Either method works, sometimes one is simpler than the other\ldots
+\item $y'' + 2y' + y = 2e^{-t}.$ We can try to do the straightforward thing, which is substitute via the method of undetermined coefficients (which in principle does not require that we know any solutions to the homogeneous equation). The sensible ``guess" is $y_p = Be^{-t}$ to correspond to the inhomogeneous terms. Substituting into the ODE yields:
+\[ Be^{-t} - 2Be^{-t} + Be^{-t} = 2e^{-t} \]
+which gives a contradiction! Hence we know something is going on, namely that $e^{-t}$ must be a solution to the homogeneous problem. We could try $tBe^{-t}$ as a next substitution, but it is smarter to find the solutions to the homogeneous case first.
+
+The characteristic polynomial is $r^2 + 2r + 1 = 0,$ which has a repeated root $r = -1!$ Now, by the methods of Problem 1, we know that the homogeneous solution 
+\[ y_h = A_1e^{-t} + A_2te^{-t}. \]
+\emph{It is a good thing we didn't try $Bte^{-t},$ as this is yet another solution to the homogeneous problem, and would lead to another contradiction. Check this if you are unsure.}
+
+We need thus to substitute our updated ``guess" $y_p = Bt^2 e^{-t}.$ This finally yields the equation 
+\[ 2 B e^{-t} = 2 e^{-t} \Rightarrow B = 1.\] Hence the general solution to this equation is 
+\[ y = y_h + y_p = A_1e^{-t} + A_2te^{-t} + t^2 e^{-t}. \]
+\end{enumerate}
+
+\end{document}
+ 
