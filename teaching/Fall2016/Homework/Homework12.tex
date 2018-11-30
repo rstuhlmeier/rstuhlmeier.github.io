@@ -1,0 +1,79 @@
+\documentclass[10pt,a4paper]{letter}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\linespread{2}
+\usepackage[left=4cm,right=4cm,top=2cm,bottom=2cm]{geometry}
+\begin{document}
+
+
+\begin{center}
+\begin{Large}
+\textbf{Ordinary Differential Equations - 10413181}\\
+\end{Large}
+\vspace{1em}
+\begin{large}Homework No. 12\end{large}
+\end{center}
+
+\begin{enumerate}
+\item Consider the vectors
+\[ \mathbf{x}^1(t) = \begin{pmatrix}
+t \\
+1
+\end{pmatrix}, 
+\mathbf{x}^2(t) = \begin{pmatrix}
+t^2 \\
+2t
+\end{pmatrix}.\]
+\begin{enumerate}
+\item Compute the Wronskian of $\mathbf{x}^1$ and $\mathbf{x}^2.$
+\item In what intervals are these two vectors linearly independent?
+\end{enumerate}
+\item Consider the vectors 
+\[ \mathbf{x}^1(t) = \begin{pmatrix}
+t \\
+1
+\end{pmatrix}, 
+\mathbf{x}^2(t) = \begin{pmatrix}
+e^t \\
+e^t
+\end{pmatrix}\]
+and answer the questions posed in 1.
+\item Given the system 
+\[ \mathbf{x}' = \begin{pmatrix}
+0 & 1 & 1 \\
+1 & 0 & 1 \\
+1 & 1 & 0 
+\end{pmatrix} \mathbf{x} \]
+are 
+\[ \mathbf{x}^1(t) = e^{2t} \begin{pmatrix}
+1 \\
+1 \\
+1 
+\end{pmatrix}, \, \mathbf{x}^2(t) = e^{-t} \begin{pmatrix}
+1 \\
+0 \\
+-1 
+\end{pmatrix}, \,
+\mathbf{x}^3(t) = e^{-t} \begin{pmatrix}
+0 \\
+1 \\
+-1 
+\end{pmatrix}
+\]
+a fundamental set of solutions to the system? Write down the general solution.
+\item Solve the initial value problem
+\[ \mathbf{x}' = \begin{pmatrix}
+5 & -1 \\
+3 & 1 
+\end{pmatrix}
+\mathbf{x}, \quad \mathbf{x}(0) = \begin{pmatrix}
+4 \\
+-2
+\end{pmatrix}. \]
+\emph{Remember from class}: if the eigenvalues $\lambda_i$ are real and different, two fundamental solutions to this system are $\mathbf{x}^1 = \xi^1 e^{\lambda_1 t}$ and $\mathbf{x}^2 = \xi^2 e^{\lambda_2 t},$ for eigenvectors $\xi^1$ and $\xi^2$ to those eigenvalues.
+\end{enumerate}
+
+
+\end{document}
