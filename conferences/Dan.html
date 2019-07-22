@@ -1,0 +1,18 @@
+﻿---
+
+layout: conference
+
+title: Breaking of water waves - criterion and accurate detection - Dan Liberzon
+---
+
+
+<h1>Breaking of water waves - criterion and accurate detection</h1>
+<h2>Dan Liberzon</h2>
+<h2>Assistant Professor in Civil and Environmental Engineering and Head of Technion Sea-Atmosphere Interaction Research Laboratory (T-SAIL), Technion - Israel Institute of Technology</h2>
+
+
+<p>
+Being a major player in water waves evolution under forcing of the above blowing wind, breaking of water waves is in the focus of scientific and engineering research for many decades now. Understanding of mechanisms causing water waves to break – breaking criterion is the main goal of the research, as discovering a universally valid criterion will allow accounting for breakers and breakers’ associated phenomena in climate and waves prediction models, engineering applications, and marine biology research. However both numerical and experimental research in this field is suffering from the lack of accurate and efficient method capable for detection of breaking waves. Here we report on the latest advances in development of robust and objective breaking waves detection method. Such method allows addressing one of the most limiting issues in the research of water waves breaking, namely accurate detection of breakers in various wave fields including the highly irregular wind forced wave fields. The currently available detection methods are either using subjective markers or rely on visual analysis and subjective human decision. The most reliable method currently available is the use of stereo imaging coupled with whitecaps counting (Hwang et al. 2016, Deike et al. 2017 and Schwendeman and Thompson 2017). However such method, aside from costly implementation of sophisticated imaging equipment and computational heavy data processing, allows accounting only for a fraction of total breaking waves in any examined field. 
+<br>
+The new PTM detection method is based on the Hilbert transform expressing the instantaneous water surface elevation fluctuations signal in terms of a time varying amplitude A(t) and frequency F(t). Several earlier attempts to implement the PTM for detection of breakers (Griffin et al. 1996, Zimmerman and Seymour 2002, Irschik et al. 2010) were based on identifying a threshold in the instantaneous frequency increase associated with the steepening crest of a wave on the verge of breaking. Such approach is very limiting, as waves break at wide variety of setups, steepness values, and lengths. Instead, we suggest considering trends and shapes in the F(t) signal, e.g. the gradients during frequency increase and decrease or the prominent peak at or after the inception of breaking. As the breaking is expected to occur at the wave crest, the instantaneous frequency signal, obtained from that of surface elevation fluctuations, is first enhanced by factoring in the instantaneous surface elevation η(t) amplifying the F(t) at steepest crests and highest waves. Then an adapted wavelet based pattern recognition algorithm is implemented to detect the pre-known shapes associated with the inception of breaking. Use of wavelets analysis allows detection of such patterns of various amplification and period. We show validation tests for this new detection method using numerous laboratory and open sea experimental data, showing its robustness and accuracy. Finally implementation for wind forced wave fields in the lab and in the open sea will be demonstrated. 
+</p>
