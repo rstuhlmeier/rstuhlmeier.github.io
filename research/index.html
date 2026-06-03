@@ -3,9 +3,25 @@ layout: default
 title: Raphael Stuhlmeier - Research 
 ---
 
-<h1>Research (last updated: 2021) </h1>
+<h1>Research </h1>
 
-<p>This page is due for an update soon!</p>
+<h2>Forecasting waves using nonlinear dispersion corrections<h2>
+  <p>
+  In many cases we want to know how high waves are on average. For example, if you want to go surfing, you'll want the waves to have be high and have a long period (unless you're a beginner, in which case you might prefer smaller waves). Of course, each wave is different, and you might wait to find one that's just right before you begin paddling.</p>
+
+<p>A surfer can judge when the wave is likely to get to them, and paddle just in time to catch it. But an automated system can't make such a judgement call - it needs to rely on sensors and predictions in order to adjust parameters. There are lots of industrial applications of "short term" forecasting - particularly involving the control of objects floating in the water. For example, wave energy converters often move with the waves, and if you know in advance exactly what waves the device will encounter (based on observations at other points) you can "tune" them to capture more energy.
+In other applications you might want to predict wave motions so you can plan when to carry out a time-sensitive operation, which might require - for example - that a ship or platform doesn't roll or pitch too much.</p>
+  
+<p>The problem is that reconstructing where a wave will be based on where it was a minute ago is quite tricky. This is because of "dispersion" or the tendency for different components to travel at different speeds, which causes the wave shape to change.
+This dispersion isn't only a linear effect, but is different depending on how high the waves are (in general taller waves are faster than shorter waves); it also turns out that the waves affect one another - for example, a short wave that "rides" on a long wave "speeds up". This was found in work by Longuet-Higgins and Phillips in the 1960s for two waves, and generalised for many waves in [1].</p>
+
+<p>In a series of papers [2-4] with collaborators, visiting researchers, and students, we captured many of the important effects of nonlinear dispersion using algebraic terms that come from the mathematical theory. This means that we can forecast where a wave will be at a later time more accurately, but without actually doing any hard computations (like solving differential equations). In particular, these computations are as fast as just using the simpler, linear, theory.</p>
+  <ol>
+    <li> R. Stuhlmeier and M. Stiassnie, Nonlinear dispersion for ocean surface waves, Journal of Fluid Mechanics, 859 (2019), 49-58.</li>
+  <li> R. Stuhlmeier and M. Stiassnie, Deterministic wave forecasting with the Zakharov equation, <em> Journal of Fluid Mechanics </em>, (2021) <b> 913 </b> A50.</li>
+    <li> M. Galvagno, D. Eeltink, and R. Stuhlmeier, Spatial deterministic wave forecasting for nonlinear sea-states, <em> Physics of Fluids,</em> (2021) <b>33</b> 102116  <a href="https://arxiv.org/abs/2108.09237">arXiv.</a></li>
+    <li> E. Meisner, M. Galvagno, D. Andrade, D. Liberzon, and R. Stuhlmeier, Wave-by-wave forecasts in directional seas using nonlinear dispersion corrections, <em>Physics of Fluids,</em> (2023) <b>35</b> 062104.</li>
+  </ol>
 
 <h2>Nonlinear wave-wave interaction in deep water</h2>
 <p>For weakly nonlinear waves, nonlinear interaction appears with quadratic nonlinearities in shallow water, and cubic nonlinearities in deep-water. 
